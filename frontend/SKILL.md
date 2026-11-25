@@ -4,27 +4,26 @@ description: Create distinctive, production-grade frontend interfaces with high 
 license: Complete terms in LICENSE.txt
 ---
 
-Use this skill to design and implement bold, production-ready frontends when the request involves UI. Combine it with repository UI/UX requirements (`docs/ui/requirements.md`) and existing design systems.
+# Frontend Design
+
+Use this skill to design and implement bold, production-ready frontends when the request involves UI. Combine it with repository UI/UX requirements, existing design tokens, and the specialized frontend modules in this directory:
+
+- **[editorial-design-system](editorial-design-system/SKILL.md)** — Anti-slop subtraction, two-voice typography (poster vs. calm), colour-blocked sections, proportional pill bars, calm utility forms, resilient GSAP motion, and desktop/mobile visual QA.
+- **[editorial-illustrations](editorial-illustrations/SKILL.md)** — 2022-era flat-editorial illustration workflow: palette-locked art direction, dual-concept bake-off, seamless transparent PNG extraction, and LCP-safe web integration.
+- **[human-ui-copy](human-ui-copy/SKILL.md)** — Plain-English, jargon-free labels, headings, and microcopy.
 
 ## Design Thinking
 
 Before coding, lock in a clear, memorable direction:
-- **Purpose**: What problem does the interface solve? Who uses it?
-- **Tone**: Commit to a strong aesthetic (e.g., brutalist/raw, retro-futuristic, editorial/magazine, luxury/refined, playful/toy-like, industrial/utilitarian). Choose one and execute it precisely.
-- **Constraints**: Framework, performance, accessibility, build tooling.
-- **Differentiation**: What makes this unforgettable? Aim for a single standout idea.
-
-Then build working code (HTML/CSS/JS, React, templ, etc.) that is:
-- Production-grade and functional
-- Visually striking with a cohesive point of view
-- Meticulous in spacing, motion, and detail
+- **Purpose**: What problem does the interface solve, and what single interactive tool or action should carry the page?
+- **Tone**: Commit to a strong aesthetic (e.g., editorial product, brutalist/raw, luxury/refined, industrial/utilitarian). Avoid timid mixes.
+- **Constraints**: Framework (Server Components first, `"use client"` only on interactive leaves), performance, accessibility, reduced motion.
+- **Subtraction**: Strip eyebrow pills, glowing dots, badge soup, and repetitive bordered card grids before adding polish.
 
 ## Frontend Aesthetics Guidelines
 
-- **Typography**: Pick characterful, non-default fonts; pair a distinctive display font with a refined body font. Avoid Arial/Inter/Roboto/system defaults.
-- **Color & Theme**: Define a strong palette with CSS variables; prefer decisive dominance + accents over timid mixes.
-- **Motion**: Use meaningful animations (page load, staggered reveals, purposeful hover states). Prefer CSS; keep motion aligned to the chosen aesthetic.
-- **Spatial Composition**: Consider asymmetry, overlap, generous negative space or intentional density. Avoid cookie-cutter layouts.
-- **Background & Details**: Build atmosphere with gradients, meshes, textures, layered transparencies, dramatic shadows, decorative borders, custom cursors, or grain overlays—matching the aesthetic.
-
-Avoid generic AI-looking designs (purple-on-white defaults, predictable layouts, overused fonts, interchangeable components). Each UI should feel intentionally crafted for its context. Match implementation effort to the chosen style: maximalism demands rich effects; minimalism demands precise restraint.
+- **Typography**: Pick characterful, non-default fonts; pair a distinctive display voice (with tabular numerals) for punchlines and figures with a calm, legible sans-serif for explanatory sections and UI.
+- **Color & Theme**: Lock to a tight set of semantic CSS variables (surface, subtle tint, deep anchor, 1–2 brand signals). Alternate full-bleed canvases rather than boxing everything into gray-bordered cards.
+- **Motion**: Use purposeful animations (scroll-triggered data reveals, scrubbed rails, live interactive state) animating only `transform`, `opacity`, and `clip-path`. Always respect `prefers-reduced-motion` and keep JS-off server HTML intact.
+- **Illustrations & Visuals**: Use palette-locked bespoke editorial spots floating seamlessly on the canvas—never hand-coded multi-object SVG scenes or glossy 3D stock graphics.
+- **Verify Visually**: Build, serve, screenshot desktop (`1440px`) and mobile (`390px`), and inspect the rendered UI directly before calling the task done.
